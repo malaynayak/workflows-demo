@@ -12,5 +12,4 @@ jobs:
         with:
           who-to-greet: "Malay"
       - name: Log Time
-        uses: actions/hello-world-javascript-action@v1.1
-        run: echo "${{steps.greetings.outputs.time}}"
+        run: echo "${{ steps.greetings.outputs.time }}"
