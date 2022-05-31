@@ -3,17 +3,25 @@ name: Simple
 on: [push]
 
 jobs:
-    run-shell-command:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Echo a string
-          run: echo "Hello World"
-        - name: multiline script
-          run: |
-            node -v
-            npm -v
-        - name: Python command
-          run: |
-            import platform
-            print (platform.processor())
-          shell: python
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo a string
+        run: echo "Hello World"
+      - name: multiline script
+        run: |
+          node -v
+          npm -v
+      - name: Python command
+        run: |
+          import platform
+          print (platform.processor())
+        shell: python
+  run-windows-command:
+    runs-on: windows-latest
+    steps:
+      - name: Directory Powershell
+        run: Get-Location
+      - name: Directory Powershell
+        run: pwd
+        shell: bash
