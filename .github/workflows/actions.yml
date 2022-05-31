@@ -1,4 +1,4 @@
-name: Actions
+name: Actions Demo
 
 on: [push]
 
@@ -6,6 +6,12 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: Code checkout
+        uses: actions/checkout@v3.0.2
+      - name: List Files
+        run: |
+          pwd
+          ls -al
       - name: Simple javascript actions
         id: greetings
         uses: actions/hello-world-javascript-action@v1.1
