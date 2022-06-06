@@ -1,5 +1,5 @@
 name: MAtrix
-on: push
+on: [push]
 
 jobs:
   node-version:
