@@ -29,3 +29,23 @@ jobs:
         run: 'curl -X POST http://localhost:3001/api/user -H ''Content-Type: application/json'' -d ''{"username": "hello","address": "dwded"}'''
       - name: Get Users
         run: curl http://localhost:3001/api/users
+  #Containers in step
+  docker-steps:
+    runs-on: ubuntu-latest
+    container:
+      image: node:16-alpine3.14
+    steps:
+      - name: Log node version
+        run: | 
+          node -v
+          cat /etc/os-release
+      - name: Step With Docker
+        uses: docker://node:12.14.1-alpine3.10
+        with:
+          entrypoint: '/bin/echo'
+          args: "Hello World!"
+      - name: Log node version from container
+        uses: docker://node:12.14.1-alpine3.10
+        with:
+          entrypoint: '/usr/local/bin/node'
+          args: "-v"
