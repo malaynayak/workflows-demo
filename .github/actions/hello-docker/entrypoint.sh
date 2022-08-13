@@ -13,6 +13,6 @@ echo "::group:: Expandable Log"
 echo "Message One"
 echo "Message Two"
 echo "Message Three"
-echo "::enfgroup::"
+echo "::endgroup::"
 
 echo "HELLO=hello" >> $GITHUB_ENV
