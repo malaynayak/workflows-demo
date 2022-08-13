@@ -40,3 +40,10 @@ jobs:
           who-to-greet: "Malay"
       - name: Log Time
         run: echo "${{ steps.greetings.outputs.time }}"
+      - uses: ./.github/actions/hello-docker
+        id: hello
+        with:
+          who-to-greet: "World"
+      - run: |
+          echo "Time: ${{ steps.hello.outputs.time }}" 
+          echo $HELLO
