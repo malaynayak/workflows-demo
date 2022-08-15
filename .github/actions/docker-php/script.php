@@ -1,7 +1,7 @@
 
 <?php
 
-require './vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 echo "Hello {$argv[0]}";
 echo "::debug ::Debug Message";
