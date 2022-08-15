@@ -1,14 +1,11 @@
-name: Hello World
+name: Dcoker PHP Action
 author: Malay Nayak
-description: Some description
+description: Dcoker PHP Action
 inputs: 
   who-to-greet:
     description: 'Who to greet'
     required: true
     default: Malay
-outputs: 
-  time:
-    description: 'The greeting time'
 runs: 
   using: 'docker'
   image: 'Dockerfile'
